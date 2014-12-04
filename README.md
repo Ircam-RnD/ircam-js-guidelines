@@ -56,40 +56,46 @@ Be careful, if you use Traceur to convert JavaScript ES6 to ES5, you must use [m
 
 Have a look at the test file in ```test/test.js```.
 Run the test
-    * in node by using: ``mocha --compilers js:mocha-traceur test/test.js```
-    * in browser:
-        If you don't want to deal with coverage (but you know you should), an easy way to test your files in browser is to use [browserify](http://browserify.org/). You 'browserify' your tests files, an use mocha in-browser testing. As you write ES6 code, you need to use (es6ify)[https://github.com/thlorenz/es6ify] transform.
-        ```
-        mocha init browser-test // create a default folder for in browser tests
-        ```
-        Then run the following code which fill the browser-test/tests.js file with an es6 version of your original tests (initially: test/tests.js)
-        ```
-          browserify()
-            .add(es6ify.runtime)
-            .transform(es6ify)
-            .requir e('./test/test.js', {
-              entry: true
-            })
-            .bundle()
-            .on('error', function(err) {
-              console.error(err);
-            })
-            .pipe(fs.createWriteStream("./browser-test/tests.js"));
-        ```
-        Last run the test in a browser.
-        ```
-        python -m SimpleHTTPServer // and visit 0.0.0.0:8000 with a browser
-        ```
+
+In node by using: ``mocha --compilers js:mocha-traceur test/test.js```
+
+In browser:
+If you don't want to deal with coverage (but you know you should), an easy way to test your files in browser is to use [browserify](http://browserify.org/). You 'browserify' your tests files, an use mocha in-browser testing. As you write ES6 code, you need to use (es6ify)[https://github.com/thlorenz/es6ify] transform.
+
+```
+mocha init browser-test // create a default folder for in browser tests
+```
+
+Then run the following code which fill the browser-test/tests.js file with an es6 version of your original tests (initially: test/tests.js)
+
+```
+browserify()
+  .add(es6ify.runtime)
+  .transform(es6ify)
+  .requir e('./test/test.js', {
+    entry: true
+  })
+  .bundle()
+  .on('error', function(err) {
+    console.error(err);
+  })
+  .pipe(fs.createWriteStream("./browser-test/tests.js"));
+```
+
+Last run the test in a browser.
+
+```
+python -m SimpleHTTPServer // and visit 0.0.0.0:8000 with a browser
+```
 
 *Coverage*
 
-    * in node:
-        use [istanbul-traceur](https://www.npmjs.org/package/istanbul-traceur)
-        and the proposed [gulp](http://gulpjs.com/) task in its README.
-    * in browser, see testsAndCoverage.js file,
-    ```
-    node testsAndCoverage.js
-    ```
+In node: use [istanbul-traceur](https://www.npmjs.org/package/istanbul-traceur) and the proposed [gulp](http://gulpjs.com/) task in its README.
+
+In browser, see testsAndCoverage.js file:
+```
+node testsAndCoverage.js
+```
 
 ![Unit test in browser](./docs/unit-test.png)
 ![Coverage report](./docs/coverage.png)
