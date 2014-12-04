@@ -4,6 +4,7 @@ Ircam JavaScript Guidelines
 For Ircam Javascript open source projects, you should put your project on the [Ircam-RnD GitHub](https://github.com/Ircam-RnD).
 
 To be adopted and re-used you should:
+
 1. Adopt coding conventions
 2. Provide a documentation and online examples (especially for audio processing where these examples serve as audio integration tests)
 3. Propose [unit tests](http://en.wikipedia.org/wiki/Unit_testing) and [code coverage](http://en.wikipedia.org/wiki/Code_coverage) information
