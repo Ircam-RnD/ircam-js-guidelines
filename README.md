@@ -44,7 +44,7 @@ In order of importance:
 
 A large unit test suite and code coverage information are a must have for maintenable software and will encourage other open source developers to propose you [Pull Request](https://help.github.com/articles/using-pull-requests/). You should also use [Semantic Versioning](http://semver.org/)
 
-*Unit tests*
+### Unit tests
 
 These tests can be done using [mocha](http://mochajs.org/).
 
@@ -88,7 +88,7 @@ Last run the test in a browser.
 python -m SimpleHTTPServer // and visit 0.0.0.0:8000 with a browser
 ```
 
-*Coverage*
+### Coverage
 
 In node: use [istanbul-traceur](https://www.npmjs.org/package/istanbul-traceur) and the proposed [gulp](http://gulpjs.com/) task in its README.
 
