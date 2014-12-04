@@ -89,5 +89,6 @@ Run the test
     ```
     node testsAndCoverage.js
     ```
+
     ![Unit test in browser](./docs/unit-test.png)
     ![Coverage report](./docs/coverage.png)
