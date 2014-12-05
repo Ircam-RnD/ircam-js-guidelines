@@ -5,18 +5,20 @@ For Ircam Javascript open source projects, you should put your project on the [I
 
 To be adopted and re-used you should:
 
-1. Adopt coding conventions
-2. Provide a documentation and online examples (especially for audio processing where these examples serve as audio integration tests)
+1. Follow coding conventions
+2. Provide a documentation and online examples - especially for audio processing where these examples serve as integration tests
 3. Propose [unit tests](http://en.wikipedia.org/wiki/Unit_testing) and [code coverage](http://en.wikipedia.org/wiki/Code_coverage) information
+
+> This repository try to respect of all the following "development rules".
 
 1. JavaScript version and coding style
 --------------------------------------
 
-[sublimetext](http://www.sublimetext.com/) is often used as text editor for JavaScript programs.
+[Sublime Text](http://www.sublimetext.com/) is often used as text editor for JavaScript programs.
 
-You can write JavaScript code using EcmaScript 6 (also known as harmony) version of the standard. But, as this version is not yet implemented on every major browser, you need a tool to convert it back to EcmaScript 5. For this purpose you can use [Traceur](https://github.com/google/traceur-compiler).
+You can write JavaScript code using EcmaScript 6 (also known as ES6 or harmony) version of the standard. But, as this version is not yet implemented on every major browser, you need a tool to convert it back to EcmaScript 5 (ES5). For this purpose you can use [Traceur](https://github.com/google/traceur-compiler).
 
-To track if a web standard you want to use is implemented on a specific browser, consult [caniuse.com](http://caniuse.com/). As a fallback, you will certainly find some [Polyfill](http://fr.wikipedia.org/wiki/Polyfill) online.
+To track if a web standard you want to use is implemented on a specific browser, consult [caniuse.com](http://caniuse.com/) ([Web Audio API support](http://caniuse.com/#feat=audio-api)). As a fallback, you will certainly find some [polyfills](http://fr.wikipedia.org/wiki/Polyfill) online.
 
 For coding style purposes, [jslint](http://www.jslint.com) is a good tool to begin with.
 
@@ -97,5 +99,10 @@ In browser, see testsAndCoverage.js file:
 node testsAndCoverage.js
 ```
 
+Mocha runnig unit tests in browser
+
 ![Unit test in browser](./docs/unit-test.png)
+
+Istanbul code coverage for ES6 source code after Mocha unit tests
+
 ![Coverage report](./docs/coverage.png)
