@@ -73,8 +73,8 @@ Then run the following code which fill the browser-test/tests.js file with an es
 ```
 browserify()
   .add(es6ify.runtime)
-  .transform(es6ify)
-  .requir e('./test/test.js', {
+  .transform(es6ify.configure(/^(?!.*node_modules)+.+\.js$/)) //http://stackoverflow.com/questions/27836829/es6ify-runtime-makes-my-three-js-importing-empty-object
+  .require('./test/test.js', {
     entry: true
   })
   .bundle()
