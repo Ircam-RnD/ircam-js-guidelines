@@ -1,22 +1,24 @@
 Ircam JavaScript Guidelines
 ===========================
 
-For Ircam Javascript open source projects, you should put your project on the [Ircam-RnD GitHub](https://github.com/Ircam-RnD).
+Ircam Javascript open source projects should go on [Ircam-RnD GitHub organisation page](https://github.com/Ircam-RnD).
 
-To be adopted and re-used you should:
+To be adopted and reused you should:
 
 1. Follow coding conventions
-2. Provide a documentation and online examples - especially for audio processing where these examples serve as integration tests
+2. Provide:
+  * documentation
+  * online examples - especially for audio processing where these examples serve often as integration tests
 3. Propose [unit tests](http://en.wikipedia.org/wiki/Unit_testing) and [code coverage](http://en.wikipedia.org/wiki/Code_coverage) information
 
-> This repository try to respect of all the following "development rules".
+> This repository tries to respect of all the following "development rules".
 
 1. JavaScript version and coding style
 --------------------------------------
 
 [Sublime Text](http://www.sublimetext.com/) is often used as text editor for JavaScript programs.
 
-You can write JavaScript code using EcmaScript 6 (also known as ES6 or harmony) version of the standard. But, as this version is not yet implemented on every major browser, you need a tool to convert it back to EcmaScript 5 (ES5). For this purpose you can use [Traceur](https://github.com/google/traceur-compiler).
+You can write JavaScript code using EcmaScript 6 (also known as ES6 or harmony) version of the standard. But, as this version is not yet implemented on every major browser, you need a tool to convert it back to EcmaScript 5 (ES5). For this purpose you can use [Babel](https://babeljs.io/), or [Traceur](https://github.com/google/traceur-compiler).
 
 To track if a web standard you want to use is implemented on a specific browser, consult [caniuse.com](http://caniuse.com/) ([Web Audio API support](http://caniuse.com/#feat=audio-api)). As a fallback, you will certainly find some [polyfills](http://fr.wikipedia.org/wiki/Polyfill) online.
 
@@ -35,6 +37,7 @@ In order of importance:
 3. Provide working examples
     * Create an ```examples``` folder, and users should be able to clone your GitHub repo, start a server in the root directory of the project (```python -m SimpleHTTPServer```) and go to url ```http://0.0.0.0:8000/examples``` to see working examples.
     * For projects published on GitHub, you should consider using the [gh-pages](https://pages.github.com/) to have an online demo directly available.
+    * As an alternative, you can also use (jsfiddle)[https://jsfiddle.net/] (or other similar online tools) to propose your examples.
 4. Write general documentation:
     * Create a ```docs``` folder in the root directory of your project.
     * Write markdown files inside.
@@ -98,6 +101,10 @@ In browser, see testsAndCoverage.js file:
 ```
 node testsAndCoverage.js
 ```
+```
+node_modules/.bin/istanbul cover --report lcovonly ./node_modules/mocha/bin/_mocha -- --compilers js:mocha-traceur -u exports -R spec test/test.js
+```
+
 
 Mocha runnig unit tests in browser
 

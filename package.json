@@ -5,10 +5,14 @@
   "main": "index.js",
   "author": "Samuel Goldszmidt <samuel.goldszmidt@gmail.com>",
   "license": "ISC",
+  "scripts": {
+    "test": "node scripts/testsAndCoverage.js"
+  },
   "devDependencies": {
     "body-parser": "^1.9.3",
     "browserify": "^6.3.3",
-    "browserify-istanbul": "git://github.com/ouhouhsami/browserify-istanbul#master",
+    "browserify-istanbul": "git://github.com/ouhouhsami/browserify-istanbul#
+    patch-1",
     "chai": "^1.10.0",
     "connect": "^3.3.3",
     "es6ify": "^1.5.1",
