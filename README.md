@@ -18,7 +18,7 @@ To be adopted and reused you should:
 
 [Sublime Text](http://www.sublimetext.com/) is often used as text editor for JavaScript programs.
 
-You can write JavaScript code using EcmaScript 6 (also known as ES6 or harmony) version of the standard. But, as this version is not yet implemented on every major browser, you need a tool to convert it back to EcmaScript 5 (ES5). For this purpose you can use [Babel](https://babeljs.io/), or [Traceur](https://github.com/google/traceur-compiler).
+You can write JavaScript code using EcmaScript 6 (also known as ES6 or harmony) version of the standard. But, as this version is not yet implemented on every major browser, you need a tool to convert it back to EcmaScript 5 (ES5). For this purpose you can use [Babel](https://babeljs.io/), or [Traceur](https://github.com/google/traceur-compiler). An ES6 prototyping boilerplate is available here: [es6-prototyping-boilerplate](https://github.com/Ircam-RnD/es6-prototyping-boilerplate).
 
 To track if a web standard you want to use is implemented on a specific browser, consult [caniuse.com](http://caniuse.com/) ([Web Audio API support](http://caniuse.com/#feat=audio-api)). As a fallback, you will certainly find some [polyfills](http://fr.wikipedia.org/wiki/Polyfill) online.
 
